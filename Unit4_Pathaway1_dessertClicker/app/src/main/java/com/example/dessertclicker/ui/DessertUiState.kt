@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    extra.apply {
-        set("lifecycle_version", "2.5.1")
-    }
-}
+package com.example.dessertclicker.ui
 
-plugins {
-    id("com.android.application") version "8.8.0" apply false
-    id("com.android.library") version "8.8.0" apply false
-    id("org.jetbrains.kotlin.android") version "2.1.0" apply false
-    id("org.jetbrains.kotlin.plugin.compose") version "2.1.0" apply false
-}
+import androidx.annotation.DrawableRes
+
+/**
+ * Data class representing the UI state for the Dessert Clicker app
+ */
+data class DessertUiState(
+    val revenue: Int = 0,
+    val dessertsSold: Int = 0,
+    val currentDessertIndex: Int = 0,
+    val currentDessertPrice: Int = 0,
+    @DrawableRes val currentDessertImageId: Int = 0
+)
